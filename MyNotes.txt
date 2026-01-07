@@ -6,3 +6,7 @@ When we understand it better, AI will look very different.
 
 AI won’t be won by who has the smartest model,
 but by who builds the smartest system around imperfect models.
+
+Models will change every year.
+Foundations last decades.
+Systems last even longer.
