@@ -1,6 +1,8 @@
 AI is not about making machines intelligent like humans.
 It’s about making machines useful in intelligent ways.
 
-
 Today’s AI is data-driven because we don’t fully understand intelligence yet.
 When we understand it better, AI will look very different.
+
+AI won’t be won by who has the smartest model,
+but by who builds the smartest system around imperfect models.
