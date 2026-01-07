@@ -10,3 +10,10 @@ but by who builds the smartest system around imperfect models.
 Models will change every year.
 Foundations last decades.
 Systems last even longer.
+
+Models are engines.
+AI Software Engineers build the car.
+
+Backend engineers handle deterministic systems.
+MLOps engineers handle probabilistic components.
+AI Software Engineers handle probabilistic systems interacting with humans.
