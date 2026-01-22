@@ -1,25 +1,13 @@
-from http.server import HTTPServer, BaseHTTPRequestHandler
+import socket
 
-HOST = "0.0.0.0"   # Listen on all interfaces
-PORT = 8080
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind(("0.0.0.0", 8080))
+server.listen(5)
 
-class SimpleHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/plain")
-        self.end_headers()
-        self.wfile.write(b"Hello from Python server\n")
+print("Listening on 8080")
 
-    def do_POST(self):
-        content_length = int(self.headers.get("Content-Length", 0))
-        body = self.rfile.read(content_length)
-        print("Received POST body:", body.decode())
-
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b"POST received\n")
-
-if __name__ == "__main__":
-    server = HTTPServer((HOST, PORT), SimpleHandler)
-    print(f"Server listening on http://{HOST}:{PORT}")
-    server.serve_forever()
+while True:
+    conn, addr = server.accept()
+    print("Connection from", addr)
+    conn.sendall(b"HTTP/1.1 200 OK\r\nContent-Length: 5\r\n\r\nHello")
+    conn.close()
